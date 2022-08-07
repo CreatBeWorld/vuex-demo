@@ -10,22 +10,22 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
+import { mapGetters, mapState } from 'vuex'
 export default {
-  name: "UserName",
+  name: 'UserName',
   computed: {
-    ...mapGetters("loginUser", ["status"]),
-    ...mapState("loginUser", ["user"]),
+    ...mapGetters('loginUser', ['status']),
+    ...mapState('loginUser', ['user'])
   },
   methods: {
     async handleLoginOut() {
-      await this.$store.dispatch("loginUser/loginOut");
+      await this.$store.dispatch('loginUser/loginOut')
       this.$router.push({
-        name: "Login",
-      });
-    },
-  },
-};
+        name: 'Login'
+      })
+    }
+  }
+}
 </script>
 
 <style scoped lang="less">
